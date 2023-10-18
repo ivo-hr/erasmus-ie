@@ -17,7 +17,7 @@ begin
 	if v_num_staff = 0 then 
 	raise info 'Error: no such staff member'; end if;
 --e
-	select quantity into v_quantitystock
+	select quantityinstock into v_quantitystock
 	from sh_stock
 	where stock_code = p_stock_code;
 --f
@@ -36,7 +36,9 @@ exception when others then
 	raise info 'Error code: %', sqlstate;
 end
 
-$$ language plpgsql
+$$ language plpgsql;
+
+CALL add_sale('A11113', 5, 10)
 
 	
 	
