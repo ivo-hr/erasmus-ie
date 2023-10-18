@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayInfo">
+
+    <TextView
+        android:id="@+id/Labels"
+        android:layout_width="187dp"
+        android:layout_height="319dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="218dp"
+        android:lineSpacingExtra="34sp"
+        android:text="Country: \n City: \n City pop: \n Metro pop: \n"
+        android:textAlignment="textEnd"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_country"
+        android:layout_width="186dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="216dp"
+        android:lineSpacingExtra="34sp"
+        android:text="placeholder"
+        android:textAlignment="viewStart"
+        android:textSize="34sp"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/Labels"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_population"
+        android:layout_width="187dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="364dp"
+        android:lineSpacingExtra="34sp"
+        android:text="placeholder"
+        android:textAlignment="viewStart"
+        android:textSize="34sp"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/Labels"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_metropolitan"
+        android:layout_width="187dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="440dp"
+        android:lineSpacingExtra="34sp"
+        android:text="placeholder"
+        android:textAlignment="viewStart"
+        android:textSize="34sp"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/Labels"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_city"
+        android:layout_width="187dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="292dp"
+        android:lineSpacingExtra="34sp"
+        android:text="placeholder"
+        android:textAlignment="viewStart"
+        android:textSize="34sp"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/Labels"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

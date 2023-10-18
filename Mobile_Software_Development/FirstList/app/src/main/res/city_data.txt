@@ -1,0 +1,19 @@
+Shanghai China
+24,153,000
+34,000,000
+
+BEIJING	China
+18,590,000
+24,900,000
+
+Karachi	Pakistan
+18,000,000
+27,506,000
+
+Istanbul Turkey
+14,657,000
+14,804,000
+
+DHAKA Bangladesh
+14,543,000
+18,898,000
