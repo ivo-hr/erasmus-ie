@@ -6,7 +6,7 @@
 ** Use VBoxManage or the VirtualBox Manager GUI to make changes.
 -->
 <VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-windows">
-  <Machine uuid="{5b46d80c-1a58-415b-a99d-9152a3a3b1dc}" name="ubuntu14.04-2" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2023-10-12T09:23:10Z">
+  <Machine uuid="{5b46d80c-1a58-415b-a99d-9152a3a3b1dc}" name="ubuntu14.04-2" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2023-10-26T09:57:03Z">
     <MediaRegistry>
       <HardDisks>
         <HardDisk uuid="{d7f0ea10-22f6-41ee-9070-5d3030196ab9}" location="ubuntu14.04-2.vmdk" format="VMDK" type="Normal"/>
@@ -14,7 +14,7 @@
     </MediaRegistry>
     <ExtraData>
       <ExtraDataItem name="GUI/LastCloseAction" value="Shutdown"/>
-      <ExtraDataItem name="GUI/LastNormalWindowPosition" value="961,31,958,484"/>
+      <ExtraDataItem name="GUI/LastNormalWindowPosition" value="961,31,800,640"/>
     </ExtraData>
     <Hardware>
       <CPU count="2">
@@ -38,6 +38,7 @@
       <Network>
         <Adapter slot="0" enabled="true" MACAddress="080027294D7E" type="82540EM">
           <NAT localhost-reachable="true">
+            <Forwarding name="http" proto="1" hostport="8080" guestport="80"/>
             <Forwarding name="ssh" proto="1" hostport="2222" guestport="22"/>
           </NAT>
         </Adapter>
@@ -53,7 +54,7 @@
       <RTC localOrUTC="UTC"/>
       <Clipboard/>
       <GuestProperties>
-        <GuestProperty name="/VirtualBox/HostInfo/GUI/LanguageID" value="en_US" timestamp="1697099981172868900" flags="RDONLYGUEST"/>
+        <GuestProperty name="/VirtualBox/HostInfo/GUI/LanguageID" value="en_US" timestamp="1698313554312617200" flags="RDONLYGUEST"/>
       </GuestProperties>
       <StorageControllers>
         <StorageController name="IDE" type="PIIX4" PortCount="2" useHostIOCache="true" Bootable="true">
