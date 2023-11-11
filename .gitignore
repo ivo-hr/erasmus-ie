@@ -2,3 +2,4 @@
 *.vmdk
 Client_Server_Programming/vms.7z
 Dogoout/
+*.DS_Store
