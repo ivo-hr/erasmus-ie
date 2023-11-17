@@ -1,0 +1,33 @@
+## Team Collection
+
+Each document in the "Team" collection has the following structure:
+
+```json
+{
+    "Team_Name": "TeamName",  // Name of the swimming team
+    "Swims": [
+        {
+            "Event_Name": "EventName",  // Name of the swimming event
+            "Event_description": "EventDescription",  // Description of the swimming event
+            "Athlete_Full_Name": "AthleteName",  // Full name of the athlete
+            "Gender": "Male/Female",  // Gender of the athlete
+            "Athlete_birth_date": "YYYY-MM-DD",  // Birth date of the athlete
+            "Swim_date": "YYYY-MM-DD",  // Date of the swim
+            "Team_Code": "TeamCode",  // Code of the team
+            "Rank_Order": "RankOrder",  // Rank order of the swim
+            "City": "CityName",  // Name of the city
+            "Country_Code": "CountryCode",  // Code of the country
+            "Duration": "hh:mm:ss:ff"  // Duration of the swim
+        },
+        // Additional swim entries for the same team
+        // ...
+    ]
+}
+
+
+Each document contains information about a specific swimming team, 
+including an array of swims associated with that team. 
+The "Swims" array includes details about each swim, such as the event name, 
+athlete information, swim date, team code, rank order, city name, country code, 
+and the duration of the swim. 
+The code ensures that each unique team gets its own document in the "Team" collection.
