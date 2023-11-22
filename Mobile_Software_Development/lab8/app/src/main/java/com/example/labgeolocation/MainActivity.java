@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -16,6 +20,7 @@ import android.location.Location;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -28,12 +33,59 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     private float minDistance = 1;           // Minimum distance between location updates (in meters)
     private static final int MY_PERMISSION_GPS = 1;   // Request code for GPS permission
 
+    Button setMinButton;  // Button to set the minimum time and distance between location updates
+    Button showListButton;  // Button to show the list of locations
+    EditText minTimeInput;  // EditText to get the minimum time between location updates
+    EditText minDistanceInput;  // EditText to get the minimum distance between location updates
+
+    ArrayList<String> locationList = new ArrayList<>();  // ArrayList to store location data
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mLocationText = (TextView) findViewById(R.id.location);   // Initialize mLocationText
         locality = (TextView) findViewById(R.id.locality);         // Initialize locality TextView
         setUpLocation();  // Set up location services
+
+        setMinButton = (Button) findViewById(R.id.updateMinsBut);  // Initialize setMinButton
+        showListButton = (Button) findViewById(R.id.showListBut);  // Initialize showListButton
+        minTimeInput = (EditText) findViewById(R.id.minTimeTxt);  // Initialize minTimeInput
+        minDistanceInput = (EditText) findViewById(R.id.minDistTxt);  // Initialize minDistanceInput
+
+
+
+        // Set onClickListener for setMinButton
+        setMinButton.setOnClickListener(v -> {
+            // Set the minimum time and distance between location updates
+            if (minTimeInput.getText().toString().equals("")) {
+                minTimeInput.setText("500");
+                Toast.makeText(this, "Resetting minimum time...", Toast.LENGTH_SHORT).show();
+            }
+            if (minDistanceInput.getText().toString().equals("")) {
+                minDistanceInput.setText("1");
+                Toast.makeText(this, "Resetting minimum distance...", Toast.LENGTH_SHORT).show();
+            }
+            //Set the minimum time and distance between location updates in int
+            minTime = Integer.parseInt(minTimeInput.getText().toString());
+            minDistance = Integer.parseInt(minDistanceInput.getText().toString());
+            Toast.makeText(this, "Minimum time and distance updated!", Toast.LENGTH_SHORT).show();
+            setUpLocation();
+        });
+
+        // Set onClickListener for showListButton
+        showListButton.setOnClickListener(v -> {
+            // Show the list of locations
+            if (locationList.isEmpty()) {
+                Toast.makeText(this, "No locations to show!", Toast.LENGTH_SHORT).show();
+            } else {
+                // Create a new intent to start the ListActivity
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                // Pass the locationList to the ListActivity
+                intent.putExtra("locationList", locationList);
+                // Start the ListActivity
+                startActivity(intent);
+            }
+        });
     }
 
     private void setUpLocation() {
@@ -49,9 +101,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         } else {
             // Start listening for location updates
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minDistance, this);
+            Log.i("Lab9", "started location updates");
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            onLocationChanged(location);
         }
     }
 
+
+    @SuppressLint("DefaultLocale")
     public void onLocationChanged(Location location) {
         String latestLocation = "";
 
@@ -60,8 +117,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         if (location != null) {
             // Format the location data
             latestLocation = String.format(
-                    "Current Location: Latitude %1$s Longitude : %2$s",
-                    Math.round(location.getLatitude()), Math.round(location.getLongitude()));
+                    "Current Location: Latitude %f Longitude : %f",
+                    location.getLatitude(), location.getLongitude());
             Log.d("GPSLOCATION", "LOCATION formatted for text view!");
         }
         mLocationText.setText("GPS Location" + "\n" + latestLocation);  // Set the raw location data
@@ -82,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                             addresses.get(size).getAdminArea() + ", " +
                             addresses.get(size).getCountryName();
                     locality.setText(address);
+                    locationList.add(address);
                 }
             }
         } catch (Exception e) {
