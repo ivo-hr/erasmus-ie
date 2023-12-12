@@ -4,15 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="what's up!\nit's"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/alarm_text"
+        android:layout_width="162dp"
+        android:layout_height="83dp"
+        android:text="your next\nalarm is at"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_date"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <TextView
+        android:id="@+id/next_alarm"
+        android:layout_width="165dp"
+        android:layout_height="98dp"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/reminder_text"
+        android:layout_width="169dp"
+        android:layout_height="60dp"
+        android:text="remember!"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_date"
+        app:layout_constraintVertical_bias="0.139" />
+
+    <TextView
+        android:id="@+id/reminder_time"
+        android:layout_width="204dp"
+        android:layout_height="46dp"
+        android:text="sun, 8 Dec at 23:59"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/next_reminder"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/next_reminder"
+        android:layout_width="170dp"
+        android:layout_height="99dp"
+        android:text="go to the dentist"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="34sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminder_text"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <TextView
+        android:id="@+id/current_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wed, 6 December 2023"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_time"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/current_time"
+        android:layout_width="249dp"
+        android:layout_height="115dp"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/but_alarm"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/circle_button"
+        android:text="alarms"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:iconTint="@android:color/holo_green_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/next_alarm"
+        app:layout_constraintVertical_bias="0.931" />
+
+    <Button
+        android:id="@+id/but_reminder"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTintMode="add"
+        android:text="reminders"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminder_time"
+        app:layout_constraintVertical_bias="0.923" />
+
+    <Button
+        android:id="@+id/but_settings"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="···"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
