@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:foregroundTint="@android:color/background_light"
+    android:foregroundTintMode="add"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TimePicker
+        android:id="@+id/alarm_time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alwaysDrawnWithCache="false"
+        android:foregroundTint="@color/white"
+        android:numbersBackgroundColor="@android:color/background_light"
+        android:numbersInnerTextColor="@android:color/background_light"
+        android:numbersSelectorColor="@android:color/background_light"
+        android:numbersTextColor="@android:color/background_light"
+        android:soundEffectsEnabled="true"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="212dp"
+        tools:layout_conversion_absoluteWidth="379dp" />
+
+
+    <CheckBox
+        android:id="@+id/tuesday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="tue"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/wednesday_checkbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/monday_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="50dp" />
+
+    <CheckBox
+        android:id="@+id/saturday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="sat"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/friday_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="50dp" />
+
+    <CheckBox
+        android:id="@+id/friday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="fri"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/saturday_checkbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/thursday_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="48dp" />
+
+    <CheckBox
+        android:id="@+id/thursday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="thu"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/friday_checkbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/wednesday_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="50dp" />
+
+    <CheckBox
+        android:id="@+id/wednesday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="wed"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/thursday_checkbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tuesday_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="55dp" />
+
+    <CheckBox
+        android:id="@+id/sunday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="sun"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/monday_checkbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="53dp" />
+
+    <CheckBox
+        android:id="@+id/monday_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@android:color/background_light"
+        android:text="mon"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tuesday_checkbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sunday_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_time_picker"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="57dp" />
+
+
+    <SeekBar
+        android:id="@+id/speed_seek_bar"
+        android:layout_width="303dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="56dp"
+        android:max="10"
+        android:progressTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wednesday_checkbox"
+        tools:layout_conversion_absoluteHeight="18dp"
+        tools:layout_conversion_absoluteWidth="379dp" />
+
+    <Button
+        android:id="@+id/ringtone_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@android:color/background_light"
+        android:text="select ringtone"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed_seek_bar"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="148dp" />
+
+    <Button
+        android:id="@+id/save_alarm_button"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle_button"
+        android:text="save"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="379dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
