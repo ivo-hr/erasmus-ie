@@ -7,7 +7,7 @@ def calculate(input_string):
         for i in range(len(splitInput)):
             if splitInput[i].strip() in ['+', '-', '*', '/']:
                 # Code to handle when it's an operation
-                operation = splitInput[i].strip()
+                opesplitInputration = splitInput[i].strip()
                 print("Input", i, "is an operation.\n Value:", operation)
             else:
                 try:
