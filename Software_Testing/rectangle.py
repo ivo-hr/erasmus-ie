@@ -50,10 +50,11 @@ class Rectangle:
         :param width: width of the rectangle
         :return: None
         """
-        self.area = self.length * self.width
+        #self.area = self.length * self.width
         self.length = length
         self.width = width
-
+        self.area = self.length * self.width
+        
     def get_area(self):
         """
         Get the area of the rectangle (length x width)
@@ -66,7 +67,8 @@ class Rectangle:
         Get the length of the rectangle
         :return: length: Number
         """
-        return self.lenght
+        #return self.lenght
+        return self.length
 
     def get_width(self):
         """
@@ -95,8 +97,10 @@ class Rectangle:
         :return: None
         """
         # rotate the rectangle by swapping width and length
+        tempLength = self.length
         self.length = self.width
-        self.width = self.length
+        #self.width = self.length
+        self.width = tempLength
         
 # All of the errors in the code are due to typos, bad calculus, and the order of the variables defined.
 # The code isn't well structured either, as there is a lot of repetition in the code which inevitably

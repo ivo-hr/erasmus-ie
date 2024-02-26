@@ -21,8 +21,8 @@ class TestRectangle(unittest.TestCase):
     def test_reset(self):
         rectangle = Rectangle(5, 3)
         rectangle.reset()
-        self.assertEqual(rectangle.get_length(), None)
-        self.assertEqual(rectangle.get_width(), None)
+        self.assertEqual(rectangle.get_length(), 0)
+        self.assertEqual(rectangle.get_width(), 0)
 
     def test_set_length_and_width(self):
         rectangle = Rectangle()

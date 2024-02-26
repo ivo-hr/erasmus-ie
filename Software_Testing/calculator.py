@@ -50,4 +50,4 @@ def calculate(input_string):
 
 
 #Run the calculator
-print(calculate(input("Enter the numbers and operation separated by a comma: ")))
+#print(calculate(input("Enter the numbers and operation separated by a comma: ")))
