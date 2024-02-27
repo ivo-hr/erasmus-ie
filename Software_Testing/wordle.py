@@ -1,23 +1,12 @@
-#from cgi import test
+# Import the necessary modules
 import random
 
-
-# -- LetterColour Class --
-# This class is used to store the letter and its colour.
-
-class LetterColour:
-    letter: str = ""
-    colour: str = ""
-    
-    def __init__(self, letter, colour):
-        self.letter = letter
-        self.colour = colour
-        
-        
 # -- Wordle Game --
 
+# Define the WordleGame class
 class WordleGame:
     def __init__(self, word):
+        # Initialize the game with the target word, guesses, and game status
         self.word = word
         self.guesses = set()
         self.num_guesses = 0
@@ -25,12 +14,11 @@ class WordleGame:
         self.correct_letters = 0
         self.contained_letters = 0
         self.incorrect_letters = 0
-        
         self.game_over = False
         self.won = False
 
     def play(self, input_word = None):
-
+        # Start the game and prompt the player for guesses
         print("Welcome to Wordle!")
         print("Guess the word by entering a 5-letter word.")
         print("You have 6 attempts to guess the word.")
@@ -56,17 +44,14 @@ class WordleGame:
             if guess == self.word:
                 print("Congratulations! You guessed the word correctly.")
                 self.won = True
-                #exit()
-
-
 
         if not self.won:
             print("Game over! You ran out of attempts.")
             print(f"The word was: {self.word}")
             self.game_over = True
-            #exit()
 
     def display_word(self, guess, TEST=False):
+        # Display the guessed word with correct, contained, and incorrect letters highlighted
         self.correct_letters = 0
         self.contained_letters = 0
         self.incorrect_letters = 0
@@ -108,6 +93,9 @@ class WordleGame:
 
 # Example usage
 if __name__ == "__main__":
+    # Choose a random word from the given list
     word = random.choice(["apple", "gnoll", "pines", "grape", "melon"])
+    # Create a WordleGame instance with the chosen word
     game = WordleGame(word)
+    # Start the game
     game.play()
