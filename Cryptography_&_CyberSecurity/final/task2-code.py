@@ -1,10 +1,10 @@
 #Switches one character with another in a string by using a replacement list
-def switch_char(txt, list):
+def switch_char (txt, switchlist):
     toReturn = ""
     
-    for i in len(txt):
-        if txt[i] in list:
-            toReturn += list.get(txt[i])
+    for i in range(0, len(txt)):
+        if txt[i].lower() in switchlist:
+            toReturn += switchlist.get(txt[i].lower())
         else:
             toReturn += txt[i]
             
@@ -72,6 +72,76 @@ list3 = {
     "n" : "g",
 }
 
+list4 = {
+    "h" : "e",
+    "g" : "t",
+    "i" : "n",
+    "z" : "a",
+    "c" : "i",
+    "u" : "s",
+    "e" : "o",
+    "f" : "d",
+    "o" : "h",
+    "w" : "d",
+    "q" : "u",
+    "r" : "c",
+    "a" : "m",
+    "v" : "p",
+    "s" : "y",
+    "y" : "s",
+    "m" : "d",
+    "n" : "g",
+}
+
+list5 = {
+    "h": "e",
+    "g": "t",
+    "i": "n",
+    "z": "a",
+    "l": "s",
+    "c": "i",
+    "u": "r",
+    "e": "o",
+    "f": "c",
+    "o": "h",
+    "w": "u",
+    "q": "f",
+    "r": "c",
+    "a": "y",
+    "v": "g",
+    "s": "b",
+    "y": "z",
+    "m": "d",
+    "n": "p",
+}
+
+
+solution = {
+    "g": "t", 
+    "o": "h",
+    "h": "e",
+    "z": "a",
+    "i": "n",
+    "m": "d",
+    "u": "r",
+    "b": "m",
+    "e": "o",
+    "l": "s",
+    "f": "c",
+    "q": "f",
+    "x": "q",
+    "w": "u",
+    "a": "y",
+    "r": "l",
+    "c": "i",
+    "s": "b",
+    "n": "p",
+    "v": "g",
+    "t": "x",
+    "j": "w",
+    "p": "v",
+    "y": "z",
+}
 
 
 
@@ -97,3 +167,12 @@ elif list == "list2":
     print(switch_char(txt, list2))
 elif list == "list3":
     print(switch_char(txt, list3))
+elif list == "list4":
+	print(switch_char(txt, list4))
+elif list == "list5":
+	print(switch_char(txt, list5))
+elif list == "solution":
+	print(switch_char(txt, solution))
+
+else:
+	print(list, "not a valid list.")
